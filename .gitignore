@@ -82,7 +82,6 @@ submodules/library/build/intermediates/incremental
 submodules/library/build/intermediates/incremental/mergeAssets
 submodules/library/build/intermediates/incremental/mergeResources
 submodules/library/build/intermediates/incremental/packageResources
-submodules/library/exoplayer.iml
 .idea/*
 app/src/main/obj
 
