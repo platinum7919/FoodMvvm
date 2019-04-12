@@ -63,3 +63,27 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+
+# Intellij
+*.iml
+/.idea/workspace.xml
+.idea/workspace.xml
+/.idea/libraries
+.idea/libraries
+.DS_Store
+build
+captures
+submodules/library/build
+submodules/library/build/intermediates
+submodules/library/build/outputs
+submodules/library/build/outputs/aar
+submodules/library/build/intermediates/incremental
+submodules/library/build/intermediates/incremental/mergeAssets
+submodules/library/build/intermediates/incremental/mergeResources
+submodules/library/build/intermediates/incremental/packageResources
+.idea/*
+app/src/main/obj
+
+app/*.apk
+/*.apk
