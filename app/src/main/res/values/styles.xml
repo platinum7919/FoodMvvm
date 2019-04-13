@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Widget.TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:layout_marginStart">@dimen/edittext_horizontal_offset</item>
+        <item name="android:layout_marginEnd">@dimen/edittext_horizontal_offset</item>
+    </style>
+
 </resources>

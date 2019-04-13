@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">FoodMvvm</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <string name="title_home">My Fav Food</string>
+    <string name="tab_user">User</string>
+    <string name="tab_food">Food</string>
+    <string name="action_show_detail">Show detail</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="select">Select</string>
+    <string name="label_gender">Gender</string>
+    <string name="label_name">Name</string>
+    <string name="label_comment">Comment</string>
+
+
+    <string name="label_user_detail_format">%1$s: %2$s</string>
+
+    <string name="na">N/A</string>
 </resources>

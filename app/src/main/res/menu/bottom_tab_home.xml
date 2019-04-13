@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/tab_item_user"
+            android:icon="@drawable/ic_account_black_24dp"
+            android:title="@string/tab_user"/>
+
+    <item
+            android:id="@+id/tab_item_food"
+            android:icon="@drawable/ic_food_black_24dp"
+            android:title="@string/tab_food"/>
+
+
+</menu>
