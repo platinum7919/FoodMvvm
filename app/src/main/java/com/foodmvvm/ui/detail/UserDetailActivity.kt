@@ -44,7 +44,7 @@ class UserDetailActivity : BaseActivity(), UserDetailView {
     /**
      * update UI given an [User] object
      */
-    fun update(user: User) {
+    private fun update(user: User) {
         supportActionBar?.title = user.name
         textview_user_gender.text = getString(
             R.string.label_user_detail_format,

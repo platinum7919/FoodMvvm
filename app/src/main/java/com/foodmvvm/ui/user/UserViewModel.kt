@@ -11,24 +11,29 @@ import com.pixplicity.easyprefs.library.Prefs
 
 class UserViewModel(val ctx: Context) : ViewModel(), SharedPreferences.OnSharedPreferenceChangeListener {
 
-    val emptyUser = User()
+    private val emptyUser = User()
+
+    private val prefs by lazy {
+        AppPrefs.getInstance(ctx)
+    }
+
     val user = MutableLiveData<User>()
 
     init {
-        user.value = AppPrefs.user
+        user.value = prefs.user
         Prefs.getPreferences().registerOnSharedPreferenceChangeListener(this)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
-            AppPrefs.KEY_USER -> {
-                user.value = AppPrefs.user ?: emptyUser
+            prefs.KEY_USER -> {
+                user.value = prefs.user ?: emptyUser
             }
         }
     }
 
     fun update(user: User) {
-        AppPrefs.user = user
+        prefs.user = user
     }
 
 }

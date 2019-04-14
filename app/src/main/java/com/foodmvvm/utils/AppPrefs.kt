@@ -5,24 +5,30 @@ import android.content.ContextWrapper
 import com.foodmvvm.data.User
 import com.pixplicity.easyprefs.library.Prefs
 
-object AppPrefs {
+class AppPrefs(ctx: Context) {
 
-    var inited = false
-    @Synchronized
-    fun setup(ctx: Context) {
-        if (inited) {
-            return
+    companion object {
+        @Volatile
+        private var instance: AppPrefs? = null
+
+        fun getInstance(ctx: Context): AppPrefs {
+            return instance ?: synchronized(this) {
+                instance ?: AppPrefs(ctx).also {
+                    instance = it
+                }
+            }
         }
+    }
 
+    init {
         Prefs.Builder()
             .setContext(ctx)
             .setMode(ContextWrapper.MODE_PRIVATE)
             .setPrefsName(ctx.packageName)
             .setUseDefaultSharedPreference(true)
             .build()
-
-        inited = true
     }
+
 
     val KEY_USER = "KEY_USER1"
 

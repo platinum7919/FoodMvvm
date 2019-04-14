@@ -30,10 +30,10 @@ class UserFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_user, container, false)
     }
 
-    var dialog: Dialog? = null
+    private var dialog: Dialog? = null
 
 
-    val viewModel by lazy {
+    private val viewModel by lazy {
         val factory = InjectorUtils.provideUserViewModelFactory(ctx)
         ViewModelProviders.of(this, factory).get(UserViewModel::class.java)
     }
@@ -44,7 +44,7 @@ class UserFragment : BaseFragment() {
      * - Make sure it saves when [android.widget.EditText] is changed
      * - Make sure that when select button is pressed, we show selection dialog
      */
-    fun setup() {
+    private fun setup() {
         button_select_gender.setOnClickListener {
             showGenderSelectionOptions()
         }

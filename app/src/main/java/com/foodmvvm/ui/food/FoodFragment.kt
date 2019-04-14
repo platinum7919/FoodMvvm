@@ -12,21 +12,21 @@ import com.foodmvvm.common.setAsVerticalList
 import com.foodmvvm.utils.InjectorUtils
 import kotlinx.android.synthetic.main.fragment_food.*
 
-class FoodFragment : BaseFragment(), FoodView {
+class FoodFragment : BaseFragment() {
     companion object {
         fun create(): FoodFragment {
             return FoodFragment()
         }
     }
 
-    override val foodAdapter: FoodAdapter
+    private val foodAdapter: FoodAdapter
         get() {
             return (recyclerview_foods.adapter as? FoodAdapter) ?: createFoodAdapter().apply {
                 recyclerview_foods.adapter = this
             }
         }
 
-    val viewModel by lazy {
+    private val viewModel by lazy {
         val factory = InjectorUtils.provideFoodViewModelFactory(ctx)
         ViewModelProviders.of(this, factory).get(FoodViewModel::class.java)
     }
@@ -50,6 +50,3 @@ class FoodFragment : BaseFragment(), FoodView {
     }
 }
 
-interface FoodView {
-    val foodAdapter: FoodAdapter
-}
